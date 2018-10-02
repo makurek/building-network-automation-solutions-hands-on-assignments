@@ -2,15 +2,13 @@
 PLAY [Play] ********************************************************************
 
 TASK [** IOS XE ** Execute show version] ***************************************
-skipping: [xrv7]
 skipping: [vmx1]
-ok: [csr14]
+skipping: [xrv7]
 ok: [csr15]
+ok: [csr14]
 
 TASK [debug] *******************************************************************
-ok: [xrv7] => {
-    "xe_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
-}
+skipping: [vmx1]
 ok: [csr15] => {
     "xe_results.stdout_lines": [
         [
@@ -34,8 +32,8 @@ ok: [csr15] => {
             "", 
             "ROM: IOS-XE ROMMON", 
             "", 
-            "R15 uptime is 1 hour, 53 minutes", 
-            "Uptime for this control processor is 1 hour, 57 minutes", 
+            "R15 uptime is 1 hour, 59 minutes", 
+            "Uptime for this control processor is 2 hours, 3 minutes", 
             "System returned to ROM by reload", 
             "System image file is \"bootflash:packages.conf\"", 
             "Last reload reason: Unknown reason", 
@@ -73,6 +71,7 @@ ok: [csr15] => {
         ]
     ]
 }
+skipping: [xrv7]
 ok: [csr14] => {
     "xe_results.stdout_lines": [
         [
@@ -96,8 +95,8 @@ ok: [csr14] => {
             "", 
             "ROM: IOS-XE ROMMON", 
             "", 
-            "R14 uptime is 1 hour, 31 minutes", 
-            "Uptime for this control processor is 1 hour, 34 minutes", 
+            "R14 uptime is 1 hour, 37 minutes", 
+            "Uptime for this control processor is 1 hour, 40 minutes", 
             "System returned to ROM by reload", 
             "System image file is \"bootflash:packages.conf\"", 
             "Last reload reason: Unknown reason", 
@@ -135,17 +134,17 @@ ok: [csr14] => {
         ]
     ]
 }
-ok: [vmx1] => {
-    "xe_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
-}
 
 TASK [** IOS XR ** Execute show version] ***************************************
-skipping: [csr14]
-skipping: [csr15]
 skipping: [vmx1]
+skipping: [csr15]
+skipping: [csr14]
 ok: [xrv7]
 
 TASK [debug] *******************************************************************
+skipping: [vmx1]
+skipping: [csr15]
+skipping: [csr14]
 ok: [xrv7] => {
     "xr_results.stdout_lines": [
         [
@@ -154,7 +153,7 @@ ok: [xrv7] => {
             "", 
             "ROM: GRUB, Version 1.99(0), DEV RELEASE", 
             "", 
-            "XRv7 uptime is 1 hour, 55 minutes", 
+            "XRv7 uptime is 2 hours, 2 minutes", 
             "System image file is \"bootflash:disk0/xrvr-os-mbi-5.3.0/mbixrvr-rp.vm\"", 
             "", 
             "******** IOS XRv Series (Pentium Celeron Stepping 3) processor with 3145215K bytes of memory.", 
@@ -236,32 +235,15 @@ ok: [xrv7] => {
         ]
     ]
 }
-ok: [csr15] => {
-    "xr_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
-}
-ok: [csr14] => {
-    "xr_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
-}
-ok: [vmx1] => {
-    "xr_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
-}
 
 TASK [** Junos ** Execute show version] ****************************************
-skipping: [xrv7]
 skipping: [csr15]
 skipping: [csr14]
+skipping: [xrv7]
 ok: [vmx1]
 
 TASK [debug] *******************************************************************
-ok: [xrv7] => {
-    "junos_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
-}
-ok: [csr14] => {
-    "junos_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
-}
-ok: [csr15] => {
-    "junos_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
-}
+skipping: [csr15]
 ok: [vmx1] => {
     "junos_results.stdout_lines": [
         [
@@ -325,10 +307,12 @@ ok: [vmx1] => {
         ]
     ]
 }
+skipping: [csr14]
+skipping: [xrv7]
 
 PLAY RECAP *********************************************************************
-csr14                      : ok=4    changed=0    unreachable=0    failed=0   
-csr15                      : ok=4    changed=0    unreachable=0    failed=0   
-vmx1                       : ok=4    changed=0    unreachable=0    failed=0   
-xrv7                       : ok=4    changed=0    unreachable=0    failed=0   
+csr14                      : ok=2    changed=0    unreachable=0    failed=0   
+csr15                      : ok=2    changed=0    unreachable=0    failed=0   
+vmx1                       : ok=2    changed=0    unreachable=0    failed=0   
+xrv7                       : ok=2    changed=0    unreachable=0    failed=0   
 

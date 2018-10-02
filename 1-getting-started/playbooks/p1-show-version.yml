@@ -15,6 +15,7 @@
       register: xe_results
       when: "'csr1000v' in group_names"
     - debug: var=xe_results.stdout_lines
+      when: "'csr1000v' in group_names"
 
     - name: "** IOS XR ** Execute show version"
       iosxr_command:
@@ -23,6 +24,7 @@
       register: xr_results
       when: "'xrv' in group_names"
     - debug: var=xr_results.stdout_lines
+      when: "'xrv' in group_names"
 
     - name: "** Junos ** Execute show version"
       junos_command:
@@ -31,4 +33,4 @@
       register: junos_results
       when: "'vmx' in group_names"
     - debug: var=junos_results.stdout_lines 
-    
+      when: "'vmx' in group_names"
