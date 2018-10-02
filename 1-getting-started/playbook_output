@@ -1,0 +1,334 @@
+
+PLAY [Play] ********************************************************************
+
+TASK [** IOS XE ** Execute show version] ***************************************
+skipping: [xrv7]
+skipping: [vmx1]
+ok: [csr14]
+ok: [csr15]
+
+TASK [debug] *******************************************************************
+ok: [xrv7] => {
+    "xe_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
+}
+ok: [csr15] => {
+    "xe_results.stdout_lines": [
+        [
+            "Cisco IOS XE Software, Version 16.04.01", 
+            "Cisco IOS Software [Everest], CSR1000V Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.4.1, RELEASE SOFTWARE (fc2)", 
+            "Technical Support: http://www.********.com/techsupport", 
+            "Copyright (c) 1986-2016 by Cisco Systems, Inc.", 
+            "Compiled Sun 27-Nov-16 13:02 by mcpre", 
+            "", 
+            "", 
+            "Cisco IOS-XE software, Copyright (c) 2005-2016 by ******** Systems, Inc.", 
+            "All rights reserved.  Certain components of Cisco IOS-XE software are", 
+            "licensed under the GNU General Public License (\"GPL\") Version 2.0.  The", 
+            "software code licensed under GPL Version 2.0 is free software that comes", 
+            "with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such", 
+            "GPL code under the terms of GPL Version 2.0.  For more details, see the", 
+            "documentation or \"License Notice\" file accompanying the IOS-XE software,", 
+            "or the applicable URL provided on the flyer accompanying the IOS-XE", 
+            "software.", 
+            "", 
+            "", 
+            "ROM: IOS-XE ROMMON", 
+            "", 
+            "R15 uptime is 1 hour, 53 minutes", 
+            "Uptime for this control processor is 1 hour, 57 minutes", 
+            "System returned to ROM by reload", 
+            "System image file is \"bootflash:packages.conf\"", 
+            "Last reload reason: Unknown reason", 
+            "", 
+            "", 
+            "", 
+            "This product contains cryptographic features and is subject to United", 
+            "States and local country laws governing import, export, transfer and", 
+            "use. Delivery of Cisco cryptographic products does not imply", 
+            "third-party authority to import, export, distribute or use encryption.", 
+            "Importers, exporters, distributors and users are responsible for", 
+            "compliance with U.S. and local country laws. By using this product you", 
+            "agree to comply with applicable laws and regulations. If you are unable", 
+            "to comply with U.S. and local laws, return this product immediately.", 
+            "", 
+            "A summary of U.S. laws governing Cisco cryptographic products may be found at:", 
+            "http://www.********.com/wwl/export/crypto/tool/stqrg.html", 
+            "", 
+            "If you require further assistance please contact us by sending email to", 
+            "export@********.com.", 
+            "", 
+            "License Level: ax", 
+            "License Type: Default. No valid license found.", 
+            "Next reload license Level: ax", 
+            "", 
+            "******** CSR1000V (VXE) processor (revision VXE) with 1086743K/3075K bytes of memory.", 
+            "Processor board ID 91SI8KOM20S", 
+            "4 Gigabit Ethernet interfaces", 
+            "32768K bytes of non-volatile configuration memory.", 
+            "3019184K bytes of physical memory.", 
+            "7774207K bytes of virtual hard disk at bootflash:.", 
+            "0K bytes of  at webui:.", 
+            "", 
+            "Configuration register is 0x2102"
+        ]
+    ]
+}
+ok: [csr14] => {
+    "xe_results.stdout_lines": [
+        [
+            "Cisco IOS XE Software, Version 16.04.01", 
+            "Cisco IOS Software [Everest], CSR1000V Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.4.1, RELEASE SOFTWARE (fc2)", 
+            "Technical Support: http://www.********.com/techsupport", 
+            "Copyright (c) 1986-2016 by Cisco Systems, Inc.", 
+            "Compiled Sun 27-Nov-16 13:02 by mcpre", 
+            "", 
+            "", 
+            "Cisco IOS-XE software, Copyright (c) 2005-2016 by ******** Systems, Inc.", 
+            "All rights reserved.  Certain components of Cisco IOS-XE software are", 
+            "licensed under the GNU General Public License (\"GPL\") Version 2.0.  The", 
+            "software code licensed under GPL Version 2.0 is free software that comes", 
+            "with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such", 
+            "GPL code under the terms of GPL Version 2.0.  For more details, see the", 
+            "documentation or \"License Notice\" file accompanying the IOS-XE software,", 
+            "or the applicable URL provided on the flyer accompanying the IOS-XE", 
+            "software.", 
+            "", 
+            "", 
+            "ROM: IOS-XE ROMMON", 
+            "", 
+            "R14 uptime is 1 hour, 31 minutes", 
+            "Uptime for this control processor is 1 hour, 34 minutes", 
+            "System returned to ROM by reload", 
+            "System image file is \"bootflash:packages.conf\"", 
+            "Last reload reason: Unknown reason", 
+            "", 
+            "", 
+            "", 
+            "This product contains cryptographic features and is subject to United", 
+            "States and local country laws governing import, export, transfer and", 
+            "use. Delivery of Cisco cryptographic products does not imply", 
+            "third-party authority to import, export, distribute or use encryption.", 
+            "Importers, exporters, distributors and users are responsible for", 
+            "compliance with U.S. and local country laws. By using this product you", 
+            "agree to comply with applicable laws and regulations. If you are unable", 
+            "to comply with U.S. and local laws, return this product immediately.", 
+            "", 
+            "A summary of U.S. laws governing Cisco cryptographic products may be found at:", 
+            "http://www.********.com/wwl/export/crypto/tool/stqrg.html", 
+            "", 
+            "If you require further assistance please contact us by sending email to", 
+            "export@********.com.", 
+            "", 
+            "License Level: ax", 
+            "License Type: Default. No valid license found.", 
+            "Next reload license Level: ax", 
+            "", 
+            "******** CSR1000V (VXE) processor (revision VXE) with 1086743K/3075K bytes of memory.", 
+            "Processor board ID 947CLV563HY", 
+            "4 Gigabit Ethernet interfaces", 
+            "32768K bytes of non-volatile configuration memory.", 
+            "3019184K bytes of physical memory.", 
+            "7774207K bytes of virtual hard disk at bootflash:.", 
+            "0K bytes of  at webui:.", 
+            "", 
+            "Configuration register is 0x2102"
+        ]
+    ]
+}
+ok: [vmx1] => {
+    "xe_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
+}
+
+TASK [** IOS XR ** Execute show version] ***************************************
+skipping: [csr14]
+skipping: [csr15]
+skipping: [vmx1]
+ok: [xrv7]
+
+TASK [debug] *******************************************************************
+ok: [xrv7] => {
+    "xr_results.stdout_lines": [
+        [
+            "Cisco IOS XR Software, Version 5.3.0[Default]", 
+            "Copyright (c) 2015 by Cisco Systems, Inc.", 
+            "", 
+            "ROM: GRUB, Version 1.99(0), DEV RELEASE", 
+            "", 
+            "XRv7 uptime is 1 hour, 55 minutes", 
+            "System image file is \"bootflash:disk0/xrvr-os-mbi-5.3.0/mbixrvr-rp.vm\"", 
+            "", 
+            "******** IOS XRv Series (Pentium Celeron Stepping 3) processor with 3145215K bytes of memory.", 
+            "Pentium Celeron Stepping 3 processor at 3698MHz, Revision 2.174", 
+            "IOS XRv Chassis", 
+            "", 
+            "1 Management Ethernet", 
+            "7 GigabitEthernet", 
+            "97070k bytes of non-volatile configuration memory.", 
+            "866M bytes of hard disk.", 
+            "2321392k bytes of disk0: (Sector size 512 bytes).", 
+            "", 
+            "Configuration register on node 0/0/CPU0 is 0x2102", 
+            "Boot device on node 0/0/CPU0 is disk0:", 
+            "Package active on node 0/0/CPU0:", 
+            "iosxr-infra, V 5.3.0[Default], Cisco Systems, at disk0:iosxr-infra-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "iosxr-fwding, V 5.3.0[Default], Cisco Systems, at disk0:iosxr-fwding-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "iosxr-routing, V 5.3.0[Default], Cisco Systems, at disk0:iosxr-routing-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "iosxr-ce, V 5.3.0[Default], Cisco Systems, at disk0:iosxr-ce-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "xrvr-os-mbi, V 5.3.0[Default], Cisco Systems, at disk0:xrvr-os-mbi-5.3.0", 
+            "    Built on Sun Jan 18 17:36:08 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "xrvr-base, V 5.3.0[Default], Cisco Systems, at disk0:xrvr-base-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "xrvr-fwding, V 5.3.0[Default], Cisco Systems, at disk0:xrvr-fwding-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "xrvr-mgbl-x, V 5.3.0[Default], Cisco Systems, at disk0:xrvr-mgbl-x-5.3.0", 
+            "    Built on Sun Jan 18 17:35:21 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "iosxr-mpls, V 5.3.0[Default], Cisco Systems, at disk0:iosxr-mpls-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "iosxr-mgbl, V 5.3.0[Default], Cisco Systems, at disk0:iosxr-mgbl-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "iosxr-mcast, V 5.3.0[Default], Cisco Systems, at disk0:iosxr-mcast-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "xrvr-mcast-supp, V 5.3.0[Default], Cisco Systems, at disk0:xrvr-mcast-supp-5.3.0", 
+            "    Built on Sun Jan 18 17:35:11 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "iosxr-bng, V 5.3.0[Default], Cisco Systems, at disk0:iosxr-bng-5.3.0", 
+            "    Built on Sun Jan 18 17:35:09 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "xrvr-bng-supp, V 5.3.0[Default], Cisco Systems, at disk0:xrvr-bng-supp-5.3.0", 
+            "    Built on Sun Jan 18 17:35:09 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "iosxr-security, V 5.3.0[Default], Cisco Systems, at disk0:iosxr-security-5.3.0", 
+            "    Built on Sun Jan 18 17:35:06 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie", 
+            "", 
+            "xrvr-fullk9-x, V 5.3.0[Default], Cisco Systems, at disk0:xrvr-fullk9-x-5.3.0", 
+            "    Built on Sun Jan 18 17:36:17 UTC 2015", 
+            "    By iox-lnx-003 in /auto/srcarchive11/production/5.3.0/all/workspace for pie"
+        ]
+    ]
+}
+ok: [csr15] => {
+    "xr_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
+}
+ok: [csr14] => {
+    "xr_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
+}
+ok: [vmx1] => {
+    "xr_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
+}
+
+TASK [** Junos ** Execute show version] ****************************************
+skipping: [xrv7]
+skipping: [csr15]
+skipping: [csr14]
+ok: [vmx1]
+
+TASK [debug] *******************************************************************
+ok: [xrv7] => {
+    "junos_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
+}
+ok: [csr14] => {
+    "junos_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
+}
+ok: [csr15] => {
+    "junos_results.stdout_lines": "VARIABLE IS NOT DEFINED!"
+}
+ok: [vmx1] => {
+    "junos_results.stdout_lines": [
+        [
+            "Hostname: vMX1", 
+            "Model: vmx", 
+            "Junos: 17.1R1.8", 
+            "JUNOS OS Kernel 64-bit  [20170209.344539_builder_stable_10]", 
+            "JUNOS OS libs [20170209.344539_builder_stable_10]", 
+            "JUNOS OS runtime [20170209.344539_builder_stable_10]", 
+            "JUNOS OS time zone information [20170209.344539_builder_stable_10]", 
+            "JUNOS network stack and utilities [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS modules [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS mx modules [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS libs [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS OS libs compat32 [20170209.344539_builder_stable_10]", 
+            "JUNOS OS 32-bit compatibility [20170209.344539_builder_stable_10]", 
+            "JUNOS libs compat32 [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS runtime [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Packet Forwarding Engine Simulation Package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS py extensions [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS py base [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS OS vmguest [20170209.344539_builder_stable_10]", 
+            "JUNOS OS crypto [20170209.344539_builder_stable_10]", 
+            "JUNOS mx libs compat32 [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS mx runtime [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS common platform support [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS mx libs [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS mtx Data Plane Crypto Support [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS daemons [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS mx daemons [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Voice Services Container package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services TLB Service PIC package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services SSL [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services Stateful Firewall [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services RPM [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services PTSP Container package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services PCEF package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services NAT [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services Mobile Subscriber Service Container package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services MobileNext Software package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services Logging Report Framework package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services LL-PDF Container package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services Jflow Container package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services Deep Packet Inspection package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services IPSec [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services IDS [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS IDP Services [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services HTTP Content Management package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services Crypto [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services Captive Portal and Content Delivery Container package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services COS [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Border Gateway Function package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS AppId Services [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services Application Level Gateways [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Services AACL Container package [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS SDN Software Suite [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Extension Toolkit [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Packet Forwarding Engine Support (M/T Common) [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS jfirmware [20170227.183729_builder_junos_171_r1]", 
+            "JUNOS Online Documentation [20170227.183729_builder_junos_171_r1]"
+        ]
+    ]
+}
+
+PLAY RECAP *********************************************************************
+csr14                      : ok=4    changed=0    unreachable=0    failed=0   
+csr15                      : ok=4    changed=0    unreachable=0    failed=0   
+vmx1                       : ok=4    changed=0    unreachable=0    failed=0   
+xrv7                       : ok=4    changed=0    unreachable=0    failed=0   
+
