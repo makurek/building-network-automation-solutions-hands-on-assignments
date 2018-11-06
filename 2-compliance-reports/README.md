@@ -24,7 +24,7 @@ Both playbooks are based on the same theme:
   a) either using ios_facts and iosxr_facts
   b) or using napalm_get_facts
 4. Use jinja2 templates to generate CSV files
-
+5. Assemble intermediate files into a report file
 
 
 

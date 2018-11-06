@@ -15,6 +15,7 @@
       with_items:
         - "{{ path_temp }}"
         - "{{ path_out }}"
+      run_once: true
     - name: "** Create temp directory **"
       file: path={{ path_temp }} state=directory
       run_once: true
