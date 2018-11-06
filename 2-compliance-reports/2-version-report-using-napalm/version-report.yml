@@ -1,0 +1,44 @@
+---
+- name: Create OS version report
+  hosts: all
+  gather_facts: no
+  connection: local
+  vars:
+    creds:
+      username: "{{ username }}"
+      password: "{{ password }}"
+    path_temp: temp
+    path_out: output
+  tasks:
+    - name: "** Do the cleanup - remove directories if exist **"
+      file: path="{{ item }}" state=absent
+      with_items:
+        - "{{ path_temp }}"
+        - "{{ path_out }}"
+    - name: "** Create temp directory **"
+      file: path={{ path_temp }} state=directory
+      run_once: true
+    - name: "** Create output report directory **"
+      file: path={{ path_out }} state=directory
+      run_once: true
+    - name: "** Collect facts**"
+      napalm_get_facts:
+        hostname="{{ inventory_hostname }}"
+        username="{{ username }}"
+        password="{{ password }}"
+        dev_os="{{ dev_os }}"
+        filter='facts'
+      register: results
+    - name: "** Generate CSV header **"
+      template:
+        src: templates/header.j2
+        dest: "{{ path_temp }}/1_header.csv"
+      run_once: true
+    - name: "** Generate output files **"
+      template:
+        src: templates/show_version.j2
+        dest: "{{ path_temp }}/{{ inventory_hostname }}.csv"
+    - name: "** Assemble report **"
+      assemble: 
+        src: "{{ path_temp }}"
+        dest: "{{ path_out }}/report.csv"
