@@ -1,0 +1,56 @@
+---
+- name: Create OS version report
+  hosts: all
+  gather_facts: no
+  connection: local
+  vars:
+    creds:
+      username: "{{ username }}"
+      password: "{{ password }}"
+    path_temp: temp
+    path_out: output
+  tasks:
+    - name: "** Do the cleanup - remove directories if exist **"
+      file: path="{{ item }}" state=absent
+      with_items:
+        - "{{ path_temp }}"
+        - "{{ path_out }}"
+    - name: "** Create temp directory **"
+      file: path={{ path_temp }} state=directory
+      run_once: true
+    - name: "** Create output report directory **"
+      file: path={{ path_out }} state=directory
+      run_once: true
+    - name: "** IOS XE collect facts**"
+      ios_facts:
+        gather_subset: 
+          - hardware
+        provider: "{{ creds }}"
+      register: xe_results
+      when: "'csr1000v' in group_names"
+    - name: "** IOS XR collect facts**"
+      iosxr_facts:
+        gather_subset:
+          - hardware
+        provider: "{{ creds }}"
+      register: xr_results
+      when: "'xrv' in group_names"  
+    - name: "** Generate CSV header **"
+      template:
+        src: templates/header.j2
+        dest: "{{ path_temp }}/1_header.csv"
+      run_once: true
+    - name: "** Generate IOS XE output files **"
+      template:
+        src: templates/show_version.j2
+        dest: "{{ path_temp }}/{{ inventory_hostname }}.csv"
+      when: "'csr1000v' in group_names"
+    - name: "** Generate IOS XR output files **"
+      template:
+        src: templates/show_xr_version.j2
+        dest: "{{ path_temp }}/{{ inventory_hostname }}.csv"
+      when: "'xrv' in group_names"
+    - name: "** Assemble report **"
+      assemble: 
+        src: "{{ path_temp }}"
+        dest: "{{ path_out }}/report.csv"
